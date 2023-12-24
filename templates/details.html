@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <img src="{{ movie.img.url }}">
+        </div>
+        <div class="card-body">
+            <p class="card-title">{{movie.name}}</p>
+            {{movie.desc}}<br>
+            <div class="d-flex justify-content-center">
+            <a href="{% url 'movieapp:update' movie.id %}" class="btn btn-warning mx-2">update</a>
+            <a href="{% url 'movieapp:delete' movie.id %}" class="btn btn-danger mx-2">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

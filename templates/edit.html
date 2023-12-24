@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container d-flex justify-content-center ">
+    <div class="ps-2 m-3 border border-5 border-primary" style="width:400px;border-radius:5px;border-color:#5cd6d6;background-color:#E9F1F3">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div style="text-align:center">
+            <input class="btn btn-secondary m-2" type="submit">
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

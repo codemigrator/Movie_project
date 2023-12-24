@@ -1,0 +1,19 @@
+{% extends 'base1.html' %}
+{% block content %}
+<div class="container-fluid" style="background-image: linear-gradient(#d1e0e0,#3e5b5b,#486a6a);">
+    <div class="row" style="margin-left:25px">
+        {% for m in movie_list %}
+        <div class="col-3">
+            <div class="card my-5" style="width: 18rem; height:350px;">
+              <a href="{% url 'movieapp:details' m.id %}"><img src="{{ m.img.url }}" class="card-img-top " style="height:250px;"></a>
+              <div class="card-body">
+                <a class="card-title" href="{% url 'movieapp:details' m.id %}">{{m.name}}</a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

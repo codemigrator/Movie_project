@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class="card mt-5 px-4  py-4 rounded-2 shadow" style="width:500px;height:450px;background-color:#F4F8F9;">
+        <form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3 style="text-align:center">Add Movies</h3><br>
+            <input type="text" name="name" placeholder="enter movie name"><br><br>
+            <h6 class="text-black-50">write description :</h6>
+            <textarea rows="6" cols="60" name="desc"></textarea><br><br>
+            <input type="file" name="img"><br>
+            <input class="rounded-pill px-4 bg-secondary" style="margin-top:35px;margin-left:160px;" type="submit">
+
+        </form>
+    </div>
+</div>
+{% endblock %}
